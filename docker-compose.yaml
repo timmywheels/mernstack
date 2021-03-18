@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  database:
+    container_name: database
+    image: "library/mongo:4.4.4-bionic"
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: app
+    volumes:
+    - ./scripts/database/:/docker-entrypoint-initdb.d/
