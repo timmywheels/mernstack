@@ -1,4 +1,6 @@
 const apiService = require("../services/apiService")
+const {NotificationType} = require("../constants");
+const {HttpStatusCode} = require("../constants");
 
 module.exports.healthCheck = (req, res) => {
     return apiService.healthCheck(req, res);
@@ -13,7 +15,16 @@ module.exports.register = (req, res) => {
 }
 
 module.exports.login = (req, res) => {
-    return apiService.login(req, res);
+    if (req.user) {
+        return res.status(200).send(req.user);
+    } else {
+        return res.status(401).send({
+            status: HttpStatusCode.UNAUTHORIZED,
+            title: "Login Failed",
+            message: "The username / password combination was unsuccessful",
+            type: NotificationType.ERROR
+        })
+    }
 }
 
 module.exports.logout = (req, res) => {

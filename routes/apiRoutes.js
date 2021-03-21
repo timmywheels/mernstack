@@ -5,8 +5,8 @@ const passport = require('passport');
 const userAuthentication = passport.authenticate('local');
 
 module.exports = app => {
-    app.set('trust proxy', 1);
     app.get('/api/health-check', apiController.healthCheck);
     app.get('/api/current-user', authenticated, apiController.currentUser);
-    app.post('/api/login', userAuthentication, apiController.login);
+    app.post('/api/user/login', userAuthentication, apiController.login);
+    app.post('/api/user/register', apiController.register);
 };

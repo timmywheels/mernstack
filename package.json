@@ -1,7 +1,7 @@
 {
-  "name": "opensrc-api",
+  "name": "mernstack-api",
   "version": "1.0.0",
-  "description": "OpenSrc MERN API",
+  "description": "MERN API",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -11,6 +11,8 @@
     "server": "ts-node-dev server.js",
     "client": "npm run start --prefix client",
     "app": "concurrently \"npm run server\" \"npm run client\"",
+    "bootstrap": "npm install && npm install --prefix client",
+    "database": "docker-compose up -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
