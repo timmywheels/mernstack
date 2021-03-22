@@ -47,7 +47,6 @@ export const DashboardMenu: Array<IMenuItem> = [
 	{ title: MenuItem.DASHBOARD, link: Redirect.DASHBOARD },
 	{ title: MenuItem.INBOX, link: Redirect.INBOX },
 	{ title: MenuItem.FORMS, link: Redirect.FORMS },
-	{ title: MenuItem.DOCS, link: Redirect.DOCS },
 ];
 
 export const DashboardDropdownMenu: Array<IMenuItem> = [

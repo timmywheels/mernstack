@@ -1,6 +1,6 @@
 import React, {Fragment, useContext, useEffect, useRef, useState} from 'react';
 import { Link, useHistory, useLocation, useRouteMatch } from 'react-router-dom';
-import Logo from '../assets/img/logo.svg';
+import Logo from '../assets/img/logo-light.svg';
 import AuthContext from '../context/AuthContext';
 import Avatar from '../components/common/Avatar';
 import { DashboardDropdownMenu, DashboardMenu, Redirect } from '../constants';
@@ -156,9 +156,6 @@ const DashboardLayout: ({ auth, children }: { auth: any, children: any }) => any
                                     <div className="flex items-center">
                                         <div className="my-4 pr-4">
                                             <Tag color={'indigo'} text={Application.RELEASE} />
-                                        </div>
-                                        <div className="my-4">
-                                            <Tag color={'indigo'} text={plan?.type} />
                                         </div>
                                         {/*Profile dropdown */}
                                         <div onClick={() => setDisplayDropdown(!displayDropdown)}
