@@ -1,4 +1,4 @@
-export const NotificationType = {
+module.exports.NotificationType = {
     SUCCESS: 'SUCCESS',
     ERROR: 'ERROR'
 }

@@ -1,6 +1,15 @@
 # MERN Stack Boilerplate
 
-MongoDB | Express | React | Node
+**Core Stack:**
+- MongoDB
+- Express
+- React
+- Node
+
+**Additional:**
+- Tailwind CSS
+- Docker
+- Passport.js
 
 ## Getting Started
 A Docker image is used for the MongoDB instance. If you do not have Docker installed on your machine you can get started with [Docker Desktop](https://www.docker.com/products/docker-desktop).
@@ -17,6 +26,5 @@ npm run database
 # starts api and client
 npm run app
 ```
-
 
 

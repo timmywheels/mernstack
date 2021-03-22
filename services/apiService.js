@@ -2,8 +2,8 @@ const keys = require("../config");
 const mongoose = require("mongoose");
 const User = mongoose.model('users');
 const bcrypt = require("bcrypt");
-const {NotificationType} = require("../constants");
-const {HttpStatusCode} = require("../constants");
+const { NotificationType } = require("../constants/notification");
+const { HttpStatusCode } = require("../constants/http");
 
 const BCRYPT_SALT_ROUNDS = 10;
 

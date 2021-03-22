@@ -1,2 +1,2 @@
-// export  * from './http';
-// export * from './notification';
+require('./http');
+require('./notification');
