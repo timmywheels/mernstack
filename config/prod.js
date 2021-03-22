@@ -1,5 +1,8 @@
 module.exports = {
+    APPLICATION: {
+        COOKIE: ""
+    },
     MONGO: {
-        URI: "mongodb://localhost:27017/app"
+        URI: ""
     }
 }

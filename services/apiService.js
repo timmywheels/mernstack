@@ -52,7 +52,3 @@ module.exports.register = async (req, res, done) => {
         type: NotificationType.SUCCESS
     });
 }
-
-module.exports.login = (req, res) => {
-    return {};
-}

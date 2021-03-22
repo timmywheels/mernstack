@@ -16,6 +16,7 @@ module.exports.register = (req, res) => {
 
 module.exports.login = (req, res) => {
     if (req.user) {
+        console.log('here')
         return res.status(200).send(req.user);
     } else {
         return res.status(401).send({

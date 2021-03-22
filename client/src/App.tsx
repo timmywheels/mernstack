@@ -55,6 +55,7 @@ const App = () => {
     const fetchCurrentUser = async () => {
         const res = await fetch('/api/current-user');
         const data = await res.json();
+        console.log('data:', data)
         if (res.ok) {
             dispatch({type: USER_LOGIN, payload: data});
             dispatch({type: USER_DETAILS, payload: data});
