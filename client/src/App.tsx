@@ -9,7 +9,7 @@ import NotificationContext from "./context/NotificationContext";
 import Loader from "./components/common/Loader";
 import ScrollToTop from "./components/common/ScrollToTop";
 import DashboardContext from "./context/DashboardContext";
-import DashboardLayout from "./layout/DashboardLayout";
+import AdminLayout from "./layout/AdminLayout";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import DashboardHome from "./views/dashboard/DashboardHome";
 import AppLayout from "./layout/AppLayout";
@@ -18,6 +18,7 @@ import {Paginate} from "./constants";
 import dashboardReducer from "./reducers/dashboardReducer";
 import Login from "./views/landing/Login";
 import Register from "./views/landing/Register";
+import DashboardLayout from "./layout/DashboardLayout";
 
 const initialAuthState = {
     authenticated: false,
