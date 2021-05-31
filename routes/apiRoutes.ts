@@ -9,4 +9,6 @@ module.exports = app => {
     app.get('/api/current-user', authenticated, apiController.currentUser);
     app.post('/api/user/login', userAuthentication, apiController.login);
     app.post('/api/user/register', apiController.register);
+    app.post("/api/user/confirm-email", apiController.confirmEmail)
+    app.post("/api/user/reset-password", apiController.resetPassword)
 };

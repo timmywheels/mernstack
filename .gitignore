@@ -15,7 +15,7 @@ newrelic_agent.log
 .env.test.local
 .env.production.local
 
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-samsaaa
