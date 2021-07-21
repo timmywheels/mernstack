@@ -2,10 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    future: {
-        removeDeprecatedGapUtilities: true,
-        purgeLayersByDefault: true,
-    },
+    darkMode: 'class',
     purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
     theme: {
         extend: {
@@ -29,9 +26,6 @@ module.exports = {
     },
     variants: {},
     plugins: [
-        require('@tailwindcss/ui')({
-            layout: 'sidebar',
-        }),
         require('@tailwindcss/forms'),
     ],
 }

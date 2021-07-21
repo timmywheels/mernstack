@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "../../assets/img/logo.svg";
+import LogoLight from "../../assets/img/logo-light.svg";
 import {Link, useHistory} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Avatar from "../common/Avatar";
 import { Plus } from 'heroicons-react';
 import { USER_LOGOUT } from "../../actions";
 import { DashboardDropdownMenu, DashboardMenu, Menu, Redirect } from '../../constants';
+import useDarkMode from "../../hooks/useDarkMode";
+import Toggle from "./Toggle";
 
 const Header = () => {
-
+    const [isDarkMode, setIsDarkMode] = useDarkMode();
     const { state: auth, dispatch } = React.useContext(AuthContext);
     const { authenticated } = auth;
     const [displayDropdown, setDisplayDropdown] = useState(false);
@@ -22,7 +25,7 @@ const Header = () => {
         return Menu.map(menuItem => {
             return (
                 <Link to={menuItem.link!}
-                      className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-indigo-500 focus:outline-none focus:text-gray-700 focus:border-indigo-500 transition duration-150 ease-in-out">
+                      className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-white hover:text-gray-700 hover:border-indigo-500 focus:outline-none focus:text-gray-700 focus:border-indigo-500 transition duration-150 ease-in-out">
                     { menuItem.title }
                 </Link>
             );
@@ -89,7 +92,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="bg-white relative shadow">
+        <nav className="bg-white dark:bg-gray-800 relative shadow">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex">
@@ -109,8 +112,8 @@ const Header = () => {
                         </div>
                         <div className="flex-shrink-0 flex items-center">
                             <Link to={auth.authenticated ? Redirect.DASHBOARD : Redirect.HOME}>
-                                <img className="block lg:hidden h-8 w-auto" src={Logo} alt="Logo"/>
-                                <img className="hidden lg:block h-8 w-auto" src={Logo} alt="Logo"/>
+                                <img className="block lg:hidden h-8 w-auto" src={isDarkMode ? LogoLight : Logo} alt="Logo"/>
+                                <img className="hidden lg:block h-8 w-auto" src={isDarkMode ? LogoLight : Logo} alt="Logo"/>
                             </Link>
                         </div>
                         <div className="hidden md:ml-6 md:flex">
@@ -129,8 +132,11 @@ const Header = () => {
                             </div>
                         ) : (
                             <div className="flex-shrink-0">
+                                <div className={"relative inline-flex px-4 py-2"}>
+                                    <Toggle enabled={isDarkMode} callback={setIsDarkMode}/>
+                                </div>
                                 <Link to={Redirect.REGISTER}>
-                                    <p className={"relative inline-flex items-center px-4 py-2 text-sm leading-5 font-medium"}>Register</p>
+                                    <p className={"relative dark:text-white inline-flex items-center px-4 py-2 text-sm leading-5 font-medium"}>Register</p>
                                 </Link>
                                 <Link to={Redirect.LOGIN}>
                                     <span className="inline-flex rounded-md shadow">
